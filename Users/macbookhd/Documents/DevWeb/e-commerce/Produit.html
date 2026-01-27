@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Produit — Boutique</title>
+    <style>
+        :root{
+            --max-width:1100px;
+            --accent:#0066cc;
+            --muted:#666;
+            --bg:#f7f7f8;
+            --card:#fff;
+            --radius:8px;
+            --gap:20px;
+        }
+        *{box-sizing:border-box}
+        body{
+            font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+            margin:0;
+            background:var(--bg);
+            color:#111;
+            line-height:1.4;
+            padding:24px;
+            display:flex;
+            justify-content:center;
+        }
+        .container{
+            width:100%;
+            max-width:var(--max-width);
+        }
+        .product{
+            display:grid;
+            grid-template-columns: 1fr 420px;
+            gap:var(--gap);
+            align-items:start;
+        }
+        @media (max-width:900px){
+            .product{grid-template-columns:1fr; padding-bottom:24px}
+        }
+        .gallery{
+            background:var(--card);
+            padding:20px;
+            border-radius:var(--radius);
+            display:grid;
+            gap:12px;
+        }
+        .main-img{
+            width:100%;
+            aspect-ratio:4/3;
+            object-fit:cover;
+            border-radius:6px;
+            background:#eaeaea;
+        }
+        .thumbs{
+            display:flex;
+            gap:10px;
+            margin-top:6px;
+        }
+        .thumbs button{
+            border:1px solid transparent;
+            padding:0;
+            background:transparent;
+            border-radius:6px;
+            cursor:pointer;
+        }
+        .thumbs img{
+            width:72px;
+            height:56px;
+            object-fit:cover;
+            border-radius:6px;
+            display:block;
+            border:2px solid transparent;
+        }
+        .thumbs img[aria-current="true"]{border-color:var(--accent)}
+        .details{
+            background:var(--card);
+            padding:20px;
+            border-radius:var(--radius);
+        }
+        .title{font-size:1.25rem; font-weight:600; margin:0 0 8px}
+        .price{font-size:1.35rem; color:var(--accent); margin:6px 0}
+        .meta{color:var(--muted); font-size:0.95rem; margin-bottom:12px}
+        .desc{margin:12px 0; color:#222}
+        .buy{
+            display:flex;
+            gap:10px;
+            align-items:center;
+            margin-top:14px;
+        }
+        .qty{
+            display:flex;
+            align-items:center;
+            gap:8px;
+            border:1px solid #ddd;
+            padding:6px;
+            border-radius:8px;
+            background:#fff;
+        }
+        .qty button{
+            border:0;
+            background:transparent;
+            padding:6px 10px;
+            cursor:pointer;
+            font-size:1.1rem;
+        }
+        .qty input{
+            width:48px;
+            text-align:center;
+            border:0;
+            font-size:1rem;
+            outline:none;
+        }
+        .add{
+            background:var(--accent);
+            color:#fff;
+            border:0;
+            padding:10px 14px;
+            border-radius:8px;
+            cursor:pointer;
+            font-weight:600;
+        }
+        .specs{margin-top:16px; color:var(--muted); font-size:0.95rem}
+        .specs li{margin:6px 0}
+        .extras{
+            margin-top:18px;
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+        }
+        .chip{
+            background:#f3f6fb;
+            padding:6px 10px;
+            border-radius:999px;
+            font-size:0.9rem;
+            color:var(--accent);
+        }
+        .reviews{
+            margin-top:18px;
+            background:var(--card);
+            padding:16px;
+            border-radius:var(--radius);
+        }
+        .back-button{
+            display:inline-block;
+            margin-bottom:20px;
+            padding:10px 16px;
+            background:var(--accent);
+            color:#fff;
+            text-decoration:none;
+            border-radius:var(--radius);
+            font-weight:600;
+            border:0;
+            cursor:pointer;
+            font-size:0.95rem;
+        }
+        .back-button:hover{
+            opacity:0.9;
+        }
+        footer{margin-top:18px;text-align:center;color:var(--muted);font-size:0.9rem}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/Users/macbookhd/Documents/DevWeb/e-commerce/Users/macbookhd/Documents/DevWeb/e-commerce/Produit.html" class="back-button">← Retour vers l'accueil</a>
+        <div class="product" itemscope itemtype="http://schema.org/Product">
+            <div class="gallery">
+                <img id="mainImage" src="https://via.placeholder.com/800x600?text=Produit+1" alt="Image principale du produit" class="main-img" itemprop="image">
+                <div class="thumbs" role="tablist" aria-label="Galerie d'images">
+                    <button aria-label="Image 1" data-src="https://via.placeholder.com/800x600?text=Produit+1">
+                        <img src="https://via.placeholder.com/160x120?text=1" alt="Aperçu 1" aria-current="true">
+                    </button>
+                    <button aria-label="Image 2" data-src="https://via.placeholder.com/800x600?text=Produit+2">
+                        <img src="https://via.placeholder.com/160x120?text=2" alt="Aperçu 2">
+                    </button>
+                    <button aria-label="Image 3" data-src="https://via.placeholder.com/800x600?text=Produit+3">
+                        <img src="https://via.placeholder.com/160x120?text=3" alt="Aperçu 3">
+                    </button>
+                    <button aria-label="Image 4" data-src="https://via.placeholder.com/800x600?text=Produit+4">
+                        <img src="https://via.placeholder.com/160x120?text=4" alt="Aperçu 4">
+                    </button>
+                </div>
+            </div>
+
+            <aside class="details">
+                <h1 class="title" itemprop="name">Nom du produit</h1>
+                <div class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    <span itemprop="priceCurrency" content="EUR">€</span>
+                    <span itemprop="price" content="49.99">49.99</span>
+                </div>
+                <div class="meta">En stock • Livraison 2‑4 jours</div>
+
+                <p class="desc" itemprop="description">
+                    Petite description concise du produit qui met en avant l'usage principal et les bénéfices.
+                </p>
+
+                <div class="buy" role="group" aria-label="Acheter">
+                    <div class="qty" aria-label="Quantité">
+                        <button type="button" id="dec" aria-label="Réduire">−</button>
+                        <input id="quantity" type="number" value="1" min="1" aria-live="polite">
+                        <button type="button" id="inc" aria-label="Augmenter">+</button>
+                    </div>
+                    <button class="add" id="addToCart" type="button">Ajouter au panier</button>
+                </div>
+
+                <ul class="specs" aria-label="Caractéristiques">
+                    <li>Poids : 350 g</li>
+                    <li>Dimensions : 12 × 8 × 4 cm</li>
+                    <li>Garantie : 2 ans</li>
+                </ul>
+
+                <div class="extras">
+                    <span class="chip">Paiement sécurisé</span>
+                    <span class="chip">Retour 30 jours</span>
+                    <span class="chip">Expédition gratuite</span>
+                </div>
+
+            </aside>
+        </div>
+
+        <section class="reviews" aria-label="Avis clients">
+            <strong>4.6/5 — Basé sur 124 avis</strong>
+            <p style="margin:8px 0 0;color:var(--muted)">"Très bon produit, conforme à la description." — Marie</p>
+        </section>
+
+        <footer>© Boutique — Exemple de page produit</footer>
+    </div>
+
+    <script>
+        // Image gallery
+        document.querySelectorAll('.thumbs button').forEach(btn=>{
+            btn.addEventListener('click', e=>{
+                const src = btn.getAttribute('data-src');
+                if(!src) return;
+                document.getElementById('mainImage').src = src;
+                document.querySelectorAll('.thumbs img').forEach(img=>img.removeAttribute('aria-current'));
+                btn.querySelector('img').setAttribute('aria-current','true');
+            });
+        });
+
+        // Quantity controls
+        const qtyInput = document.getElementById('quantity');
+        document.getElementById('inc').addEventListener('click', ()=> qtyInput.value = Math.max(1, Number(qtyInput.value) + 1));
+        document.getElementById('dec').addEventListener('click', ()=> qtyInput.value = Math.max(1, Number(qtyInput.value) - 1));
+        qtyInput.addEventListener('input', ()=> { if(qtyInput.value === '' || Number(qtyInput.value) < 1) qtyInput.value = 1; });
+
+        // Add to cart (placeholder)
+        document.getElementById('addToCart').addEventListener('click', ()=>{
+            const qty = Number(qtyInput.value) || 1;
+            const name = document.querySelector('[itemprop="name"]').textContent.trim();
+            const price = document.querySelector('[itemprop="price"]').getAttribute('content');
+            // Replace below with real cart API / integration
+            console.log('Ajouter au panier', {name, price, qty});
+            alert(qty + ' × ' + name + ' ajouté au panier.');
+        });
+    </script>
+</body>
+</html>
+
+
+<!doctype html>
